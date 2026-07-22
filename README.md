@@ -1,18 +1,11 @@
-# 🚀 End-to-End Data Warehouse & Analytics Project
+🚀 End-to-End Data Warehouse & Analytics Project
+Welcome to the End-to-End Data Warehouse & Analytics Project!
 
-Welcome to the **End-to-End Data Warehouse & Analytics Project**! 
+This repository showcases the complete lifecycle of an enterprise-grade data warehouse solution built with SQL Server. It covers raw data ingestion (Bronze), cleansing and transformation (Silver), dimensional modeling (Gold), and advanced SQL business analytics ranging from EDA to cohort and segmentation analysis.
 
-This repository showcases the complete lifecycle of an enterprise-grade data warehouse solution built with **SQL Server**. It covers raw data ingestion (**Bronze**), cleansing and transformation (**Silver**), dimensional modeling (**Gold**), and advanced SQL business analytics ranging from EDA to cohort and segmentation analysis.
+🏗️ Data Architecture (Medallion Pattern)
+The data warehouse follows the industry-standard Medallion Architecture:
 
----
-
-## 🏗️ Data Architecture (Medallion Pattern)
-
-The data warehouse follows the industry-standard **Medallion Architecture**:
-
-```text
-  [ Raw CSVs ] ──> 🟤 Bronze Layer ──> ⚪ Silver Layer ──> 🟡 Gold Layer ──> 📊 SQL Analytics
-  (CRM & ERP)       (Raw Ingestion)     (Cleansed Data)     (Star Schema)     (Business Insights)
 🟤 Bronze Layer (Raw Ingestion): Ingests raw data from CRM and ERP source systems into staging tables without altering the original values.
 
 ⚪ Silver Layer (Cleansing & Standardization): Cleanses missing values, removes duplicates, fixes data types, standardizes codes, and handles data quality issues.
@@ -20,25 +13,30 @@ The data warehouse follows the industry-standard **Medallion Architecture**:
 🟡 Gold Layer (Dimensional Modeling): Models cleansed data into a Star Schema with facts and dimensions optimized for analytical queries and BI tools.
 
 📁 Repository Structure
-Plaintext
-SQL-Data-Warehouse-Project/
-│
-├── datasets/                   # Raw CSV source data (CRM & ERP)
-│
-├── docs/                       # Architecture diagrams & naming conventions
-│
-├── scripts/                    # Core Data Engineering scripts
-│   ├── bronze/                 # DDL & stored procedures for raw ingestion
-│   ├── silver/                 # DDL & stored procedures for data cleansing
-│   ├── gold/                   # DDL for star schema views (Facts & Dimensions)
-│   ├── 01_eda/                 # Exploratory Data Analysis scripts
-│   ├── 02_analytics/            # Advanced Business Analytics scripts
-│   ├── 03_reports/              # Executive reporting views (Customer & Product)
-│   └── init_database.sql       # Database creation script
-│
-├── tests/                      # Quality checks & validation test suites
-│
-└── README.md                   # Project documentation
+datasets/ - Raw CSV source data (CRM & ERP)
+
+docs/ - Architecture diagrams & naming conventions
+
+scripts/ - Core Data Engineering & Analytics scripts
+
+bronze/ - DDL & stored procedures for raw ingestion
+
+silver/ - DDL & stored procedures for data cleansing
+
+gold/ - DDL for star schema views (Facts & Dimensions)
+
+01_eda/ - Exploratory Data Analysis scripts
+
+02_analytics/ - Advanced Business Analytics scripts
+
+03_reports/ - Executive reporting views (Customer & Product)
+
+init_database.sql - Database creation script
+
+tests/ - Quality checks & validation test suites
+
+README.md - Project documentation
+
 📊 Analytics & Insights Capabilities
 The analytics layer translates data warehouse tables into actionable business insights across three key stages:
 
@@ -80,9 +78,8 @@ Version Control: Git & GitHub
 
 🚀 Getting Started
 Clone the repository:
+git clone https://github.com/MuhammadShaaf/SQL-Data-Warehouse-Project.git
 
-Bash
-git clone [https://github.com/MuhammadShaaf/SQL-Data-Warehouse-Project.git](https://github.com/MuhammadShaaf/SQL-Data-Warehouse-Project.git)
 Initialize Database:
 Run scripts/init_database.sql in SSMS to create the database framework.
 
