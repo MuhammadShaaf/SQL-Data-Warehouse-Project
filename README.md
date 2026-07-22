@@ -1,100 +1,103 @@
-🚀 End-to-End Data Warehouse & Analytics Project
-Welcome to the End-to-End Data Warehouse & Analytics Project!
+<div align="center">
 
-This repository showcases the complete lifecycle of an enterprise-grade data warehouse solution built with SQL Server. It covers raw data ingestion (Bronze), cleansing and transformation (Silver), dimensional modeling (Gold), and advanced SQL business analytics ranging from EDA to cohort and segmentation analysis.
+# 🚀 END-TO-END DATA WAREHOUSE & ANALYTICS PROJECT
+### *A Production-Grade T-SQL Solution using Medallion Architecture & Advanced Analytics*
 
-🏗️ Data Architecture (Medallion Pattern)
-The data warehouse follows the industry-standard Medallion Architecture:
+---
 
-🟤 Bronze Layer (Raw Ingestion): Ingests raw data from CRM and ERP source systems into staging tables without altering the original values.
+</div>
 
-⚪ Silver Layer (Cleansing & Standardization): Cleanses missing values, removes duplicates, fixes data types, standardizes codes, and handles data quality issues.
+## 📌 Project Overview
 
-🟡 Gold Layer (Dimensional Modeling): Models cleansed data into a Star Schema with facts and dimensions optimized for analytical queries and BI tools.
+Welcome to the **End-to-End Data Warehouse & Analytics Project**!
 
-📁 Repository Structure
-datasets/ - Raw CSV source data (CRM & ERP)
+This repository demonstrates the complete lifecycle of an enterprise-grade data warehouse solution built with **Microsoft SQL Server**. The project models multi-source datasets (**CRM** and **ERP**) using the industry-standard **Medallion Architecture** and performs advanced business intelligence analysis ranging from Exploratory Data Analysis (EDA) to RFM segmentation and customer/product 360 reporting.
 
-docs/ - Architecture diagrams & naming conventions
+---
 
-scripts/ - Core Data Engineering & Analytics scripts
+## 🏗️ Data Architecture (Medallion Pattern)
 
-bronze/ - DDL & stored procedures for raw ingestion
+The data warehouse transforms raw operational data into structured, business-ready analytics across three distinct layers:
 
-silver/ - DDL & stored procedures for data cleansing
+* 🟤 **Bronze Layer (Raw Staging):** Ingests raw CSV source data from **CRM** and **ERP** systems into staging tables without schema or data modifications.
+* ⚪ **Silver Layer (Cleansing & Standardization):** Handles missing values, deduplication, data type alignment, code standardization, and data quality enforcement.
+* 🟡 **Gold Layer (Dimensional Modeling):** Builds an optimized **Star Schema** with Fact and Dimension views designed for analytical queries and BI reporting.
 
-gold/ - DDL for star schema views (Facts & Dimensions)
+---
 
-01_eda/ - Exploratory Data Analysis scripts
+## 📁 Repository Structure
 
-02_analytics/ - Advanced Business Analytics scripts
+* 📂 **`datasets/`** — Raw CSV files representing source systems (CRM & ERP)
+* 📂 **`docs/`** — Architecture diagrams, data dictionary, and naming conventions
+* 📂 **`scripts/`** — Data Engineering & Analytics T-SQL scripts
+  * 📁 **`bronze/`** — Data Definition Language (DDL) & ingestion stored procedures
+  * 📁 **`silver/`** — Data cleansing, transformation, and load procedures
+  * 📁 **`gold/`** — Star Schema creation scripts (Facts & Dimensions)
+  * 📁 **`01_eda/`** — Exploratory Data Analysis scripts
+  * 📁 **`02_analytics/`** — Advanced SQL business analytics scripts
+  * 📁 **`03_reports/`** — Executive customer and product reporting views
+  * 📄 **`init_database.sql`** — Database initialization script
+* 📂 **`tests/`** — Data quality assertion tests and schema validation scripts
+* 📄 **`README.md`** — Repository documentation
 
-03_reports/ - Executive reporting views (Customer & Product)
+---
 
-init_database.sql - Database creation script
+## 📊 Analytics & Insights Capabilities
 
-tests/ - Quality checks & validation test suites
+The analytics suite converts transformed data warehouse tables into actionable business intelligence across three core stages:
 
-README.md - Project documentation
+### 🔍 1. Exploratory Data Analysis (EDA)
+* **Schema Verification:** Table structure checks, data type audits, and row count checks.
+* **Dimensional Distribution:** Attribute frequency, unique value counts, and categorical breakdowns.
+* **Temporal Auditing:** Date range boundaries, transaction volume trends, and missing date checks.
+* **Measures Evaluation:** Statistical summaries (min, max, mean, sum) across key numeric fields.
 
-📊 Analytics & Insights Capabilities
-The analytics layer translates data warehouse tables into actionable business insights across three key stages:
+### 📈 2. Advanced SQL Analytics
+* **Ranking & Performance:** Identifying top-performing products and high-value customers using window functions (`DENSE_RANK()`, `ROW_NUMBER()`).
+* **Time-Series Analysis:** Period-over-period performance tracking including Year-over-Year (YoY) and Month-over-Month (MoM) growth.
+* **Cumulative Metrics:** Calculating running revenue totals, cumulative margins, and moving averages.
+* **Customer Segmentation (RFM):** Categorizing customer behavior using Recency, Frequency, and Monetary parameters.
+* **Part-to-Whole Analysis:** Evaluating category and product percentage contributions to overall enterprise revenue.
 
-🔍 1. Exploratory Data Analysis (EDA)
-Database & Schema Exploration: Table structure verification and row count auditing.
+### 📄 3. Executive Reporting Views
+* 👤 **Customer 360 View (`12_report_customers.sql`):** Consolidates Lifetime Value (LTV), total order frequency, average order value (AOV), and recency scores into a unified view.
+* 📦 **Product Performance View (`13_report_products.sql`):** Aggregates revenue, order volume, total quantity sold, profit margins, and sales ranking per product category.
 
-Dimensional Exploration: Unique values, categorical breakdowns, and attribute distribution.
+---
 
-Date Range Auditing: Identifying boundaries for temporal analysis.
+## 🛠️ Tech Stack & Tools
 
-Measures Assessment: Summary statistics (min, max, mean, sum) for numerical fields.
+* 🗄️ **Database Engine:** Microsoft SQL Server (T-SQL)
+* 💻 **IDE:** SQL Server Management Studio (SSMS)
+* 📐 **Architecture:** Medallion Architecture (Bronze, Silver, Gold Layers)
+* 📊 **Data Modeling:** Dimensional Modeling (Star Schema)
+* 🔧 **Version Control:** Git & GitHub
 
-📈 2. Advanced SQL Analytics
-Magnitude & Ranking Analysis: Identifying top/bottom performing products and high-value customers using Window Functions (DENSE_RANK(), ROW_NUMBER()).
+---
 
-Time-Series Analysis: Year-over-Year (YoY) and Month-over-Month (MoM) sales performance tracking.
+## 🚀 Getting Started
 
-Cumulative Metrics: Running totals and moving averages for revenue trends.
+1. **Clone the repository:**
+   `git clone https://github.com/MuhammadShaaf/SQL-Data-Warehouse-Project.git`
 
-Data Segmentation & RFM: Grouping customers based on purchase behavior, recency, and spend.
+2. **Initialize the Database:**
+   Open SSMS and execute `scripts/init_database.sql` to establish the database and schemas.
 
-Part-to-Whole Metrics: Category contribution analysis to overall revenue.
+3. **Execute ETL Pipelines:**
+   Run the stored procedures inside `scripts/bronze/` and `scripts/silver/` to populate and transform the data.
 
-📄 3. Executive Reporting Views
-Customer 360 View (12_report_customers.sql): Aggregates lifetime value (LTV), total orders, average order value, and recency for every customer.
+4. **Build Gold Layer:**
+   Run scripts in `scripts/gold/` to construct the star schema views.
 
-Product Performance View (13_report_products.sql): Measures revenue generated, quantity sold, profit margins, and sales rank across product categories.
+5. **Run Analytics:**
+   Execute scripts in `scripts/01_eda/`, `scripts/02_analytics/`, and `scripts/03_reports/` to generate insights.
 
-🛠️ Tech Stack & Tools
-Database Engine: Microsoft SQL Server (T-SQL)
+---
 
-IDE: SQL Server Management Studio (SSMS)
+## 🌟 About Me
 
-Architecture: Medallion Pattern (Bronze, Silver, Gold Layers)
+Hi there! 👋 I'm **Muhammad Shaaf**.
 
-Modeling: Dimensional Modeling (Star Schema)
+I am passionate about **Data Engineering**, **Data Warehousing**, and **Advanced Analytics**. This project demonstrates my hands-on ability to architect scalable SQL databases, clean multi-source enterprise data, and deliver actionable insights through SQL analytics.
 
-Version Control: Git & GitHub
-
-🚀 Getting Started
-Clone the repository:
-git clone https://github.com/MuhammadShaaf/SQL-Data-Warehouse-Project.git
-
-Initialize Database:
-Run scripts/init_database.sql in SSMS to create the database framework.
-
-Run Ingestion & Transformation:
-Execute the stored procedures in scripts/bronze/ and scripts/silver/ to populate and cleanse the layers.
-
-Build Gold Layer:
-Run scripts in scripts/gold/ to build the Star Schema views.
-
-Run Analytics:
-Execute scripts in scripts/01_eda/, scripts/02_analytics/, and scripts/03_reports/ to generate insights.
-
-🌟 About Me
-Hi there! 👋 I'm MuhammadShaaf.
-
-I'm passionate about Data Engineering, Data Warehousing, and Advanced Analytics. This project showcases my hands-on experience in building scalable SQL architecture and extracting business value from multi-source datasets.
-
-⭐ If you find this repository useful or inspiring, please give it a Star!
+⭐ If you find this project valuable or inspiring, please consider giving it a **Star**!
